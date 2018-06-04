@@ -8,6 +8,7 @@ import NewDeck from './deck/NewDeck'
 import DeckList from './deck/DeckList'
 import NewQuestion from './question/NewQuestion'
 import IndividualDeck from './deck/IndividualDeck'
+import Quiz from './quiz/Quiz.js'
 
 const Tabs = createBottomTabNavigator({
 	DeckList: {
@@ -38,6 +39,13 @@ const AppNavigator = createStackNavigator({
 		navigationOptions: {
 			headerTintColor: '#000'
 		}
+	},
+	Quiz: {
+       screen: Quiz,
+       navigationOptions: {
+       	title: 'Quiz',
+       	headerTintColor: '#000'
+       }
 	},
 	NewQuestion: {
         screen: NewQuestion,

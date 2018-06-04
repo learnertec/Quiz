@@ -7,7 +7,6 @@ import {addDeck} from '../../actions/index';
 
 
 class AddDeck extends React.Component {
-  
   componentWillMount(){
   	this.setState({
   		text: ''
@@ -57,7 +56,7 @@ class AddDeck extends React.Component {
            <TextInput
                value={this.state.text}
                style={style.input}
-               onChangeText={Text => this.setState({text})}
+               onChangeText={text => this.setState({text})}
                 />
 
                 <TouchableOpacity

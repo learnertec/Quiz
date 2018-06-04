@@ -37,7 +37,13 @@ submitQuestion = () => {
   	deckName: title
   })
 
-  Alert.alert('Successful','Question Added Successfully');
+  Alert.alert('Successful','Question Added Successfully',[
+    {
+      text: 'OK', onPress: () =>
+      this.props.navigation.goBack()
+    }
+
+    ]);
 
 }
 

@@ -1,17 +1,17 @@
 import React from 'react'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native'
 
 class IndividualDeck extends React.Component {
 	render(){
       const {title} = this.props.navigation.state.params;
-      const questions = this.props.deck[title].questions;
+      const questions = this.props.decks[title] && this.props.decks[title].questions;
 
 		return(
        <View style={styles.container}>
-           <View>
-           <Text>{title}</Text>
-           <Text>{questions.length} cards</Text>
+           <View style={{flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+           <Text style={{fontSize: 36}}>{title}</Text>
+           <Text style={{fontSize: 22, marginTop: 12}}>{questions.length}cards</Text>
            </View>
 
            <TouchableOpacity 
@@ -23,7 +23,7 @@ class IndividualDeck extends React.Component {
              }}
              style={styles.addCard}>
 
-               <Text >Add Card</Text>
+               <Text style={styles.addCardTitle}>Add Card</Text>
            </TouchableOpacity>
 
             <TouchableOpacity 
@@ -34,7 +34,7 @@ class IndividualDeck extends React.Component {
               	})
               }}
               style={styles.startQuiz} >
-                <Text style={styles.startQuiz}>Start Quiz</Text>
+                <Text style={styles.startQuizTitle}>Start Quiz</Text>
 
             </TouchableOpacity>
 

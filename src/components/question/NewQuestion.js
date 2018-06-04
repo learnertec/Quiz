@@ -9,9 +9,9 @@ class NewQuestion extends React.Component {
   componentWillMount(){
   	this.setState({
   		question: '',
-  		answer: ''
-  	})
-  }
+  		 answer: ''
+  	 })
+   }
 
 submitQuestion = () => {
 	const { question,answer } = this.state;
@@ -72,7 +72,6 @@ render(){
 			)
   }
 	}
-}
 
 function mapStateToProps(state){
   return {

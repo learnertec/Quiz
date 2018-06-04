@@ -4,7 +4,9 @@ import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 import reducer from '../reducers/index'
 import {createStackNavigator, createBottomTabNavigator } from 'react-navigation'
+import NewDeck from './deck/NewDeck'
 import DeckList from './deck/DeckList'
+import NewQuestion from './question/NewQuestion'
 import IndividualDeck from './deck/IndividualDeck'
 
 const Tabs = createBottomTabNavigator({
@@ -13,7 +15,15 @@ const Tabs = createBottomTabNavigator({
 		navigationOptions: {
 			tabBarLabel: 'All Decks'
 		}
+	},
+	NewDeck: {
+		screen: NewDeck,
+		navigationOptions: {
+			tabBarLabel: 'New Deck'
+		}
 	}
+
+
 
 })
 
@@ -28,7 +38,14 @@ const AppNavigator = createStackNavigator({
 		navigationOptions: {
 			headerTintColor: '#000'
 		}
-	}
+	},
+	NewQuestion: {
+        screen: NewQuestion,
+        navigationOptions: {
+            title: 'Add Question',
+            headerTintColor: '#000',
+        }
+},
 })
 
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, StyleSheet, TouchableOpacity,Text} from 'react-native';
+import { NavigationActions } from 'react-navigation';
 
 export default class Quiz extends React.Component{
 	componentWillMount(){
@@ -15,6 +16,14 @@ export default class Quiz extends React.Component{
 
 		this.setState({questionIndex: questionIndex + 1, correctAnswers: correctAnswers + 1,shouldShowAnswer: false})
 	}
+
+  startQuiz = () => {
+    this.setState({questionIndex: 0,correctAnswers: 0, shouldShowAnswer: false});
+  }
+
+  backToDeck = () => {
+    this.props.navigation.goBack();
+  }
 
 	onIncorrect = () => {
 		this.setState({questionIndex: this.state.questionIndex + 1})
@@ -67,11 +76,25 @@ export default class Quiz extends React.Component{
                         
 
                         <TouchableOpacity onPress={this.onCorrect}>
-                        <Text style={{backgroundColor: '#70dd2f', justifyContent: 'center', height: 30, width: 200}}>Correct</Text>
+                        <Text style={{
+                          backgroundColor: '#70dd2f',
+                           justifyContent: 'center',
+                            height: 30, width: 200}}
+                            >
+                            Correct
+                            </Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity onPress={this.onIncorrect}>
-                           <Text style={{backgroundColor: '#ff463f', justifyContent: 'center', height: 30, width: 200, marginTop: 20}}>Incorrect</Text>
+                           <Text style={{
+                            backgroundColor: '#ff463f', 
+                            justifyContent: 'center',
+                             height: 30,
+                              width: 200,
+                            marginTop: 20}}
+                            >
+                            Incorrect
+                            </Text>
                         </TouchableOpacity>
                    </View>
                   </View>
@@ -82,6 +105,34 @@ export default class Quiz extends React.Component{
        		) : (
            <View style={styles.container}>
               <Text>Score: {correctAnswers}</Text>
+
+              <View style={{aliignItems: 'center', justifyContent: 'space-around', flex: 2}}>
+                <View style={styles.container}>
+
+                <TouchableOpacity onPress={this.startQuiz}>
+                <Text style={{
+                  backgroundColor: '#70dd2f',
+                  justifyContent: 'center',
+                  height: 30,
+                  width: 200
+                }}>start Quiz</Text>>
+
+                </TouchableOpacity>
+
+
+                <TouchableOpacity onPress={this.backToDeck}>
+                <Text style={{
+                  backgroundColor: '#ff463f',
+                  justifyContent: 'center',
+                  height: 30,
+                  marginTop: 20
+                }}>Back to Deck</Text>
+
+                </TouchableOpacity>
+
+                </View>
+
+              </View>
            </View>
        		)
        }

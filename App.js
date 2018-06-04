@@ -1,13 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { initialData } from './utils/StorageApi';
+import Index from './src/components/index';
 
 export default class App extends React.Component {
   render(){
     return (
-      <View style={styles.container}>
-        <Text>heloo</Text>
-      </View>
+      <Index />
     );
   }
 }

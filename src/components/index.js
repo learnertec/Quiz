@@ -4,6 +4,7 @@ import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 import reducer from '../reducers/index'
 import {createStackNavigator, createBottomTabNavigator } from 'react-navigation'
+import {setNotification} from '../util/notificationAPI';
 import NewDeck from './deck/NewDeck'
 import DeckList from './deck/DeckList'
 import NewQuestion from './question/NewQuestion'
@@ -58,6 +59,10 @@ const AppNavigator = createStackNavigator({
 
 
 export default class Index extends React.Component{
+
+	componentDidMount(){
+		setNotification();
+	}
 	render(){
 		return (
 			<Provider store={createStore(reducer)}>

@@ -14,19 +14,23 @@ class NewQuestion extends React.Component {
    }
 
 submitQuestion = () => {
+  let alert = {};
 	const { question,answer } = this.state;
 	const { title,questions } = this.props.navigation.state.params;
 
 	if (question === ''){
-		Alert.alert('Mandatory','Question cannot be empty');
+		alert=(type: 'Mandatory',content: 'Question cannot be empty');
 		return;
 	}
 
 	if (answer === ''){
-		Alert.alert('Mandatory','Answer cannot be empty');
+		alert = (type: 'Mandatory',content: 'Answer cannot be empty');
 		return;
 	}
 
+  if(alert.length > 0){
+    Alert.alert(alert.type, alert.content)
+  }
   
   const params = {title, questions, question, answer};
 

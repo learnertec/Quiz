@@ -79,7 +79,9 @@ export default class Quiz extends React.Component{
                         <Text style={{
                           backgroundColor: '#70dd2f',
                            justifyContent: 'center',
-                            height: 30, width: 200}}
+                            height: 30, 
+                            textAlign: 'center',
+                            width: 200}}
                             >
                             Correct
                             </Text>
@@ -90,6 +92,7 @@ export default class Quiz extends React.Component{
                             backgroundColor: '#ff463f', 
                             justifyContent: 'center',
                              height: 30,
+                              textAlign: 'center',
                               width: 200,
                             marginTop: 20}}
                             >
@@ -114,6 +117,7 @@ export default class Quiz extends React.Component{
                   backgroundColor: '#70dd2f',
                   justifyContent: 'center',
                   height: 30,
+                   textAlign: 'center',
                   width: 200
                 }}>start Quiz</Text>>
 
@@ -125,6 +129,8 @@ export default class Quiz extends React.Component{
                   backgroundColor: '#ff463f',
                   justifyContent: 'center',
                   height: 30,
+                   textAlign: 'center',
+                   width: 200,
                   marginTop: 20
                 }}>Back to Deck</Text>
 
